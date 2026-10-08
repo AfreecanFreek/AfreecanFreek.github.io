@@ -1,3 +1,175 @@
+/* MICROSOFT COPILOT: Style 2 */
+* {
+    box-sizing: border-box;
+}
+
 body {
-  background-color: #ecfbe6;
+    margin: 0;
+    padding: 24px;
+    color: #302b45;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f7e8cf url("./assets/bg.png") center / cover fixed;
+}
+
+header,
+footer {
+    max-width: 1100px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    background: #623b78;
+}
+
+header a,
+footer a {
+    color: #fff1a8;
+    font-weight: bold;
+}
+
+header p {
+    margin: 6px 0 0;
+    font-size: 1.25rem;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+article {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+article > h1,
+article > nav {
+    grid-column: 1 / -1;
+}
+
+article > h1 {
+    margin: 0;
+    padding: 14px;
+    color: #452a61;
+    text-align: center;
+    border: 3px solid #e36b52;
+    background: #fff8e9;
+}
+
+nav {
+    padding: 14px 20px;
+    border: 3px solid #e9ae34;
+    background: #fff3c7;
+}
+
+nav h2 {
+    margin: 0 0 8px;
+    padding: 4px 8px;
+    color: #9b4c32;
+    border: 2px solid #e9ae34;
+}
+
+nav ul,
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: #633b79;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: 16px;
+    border: 3px solid #47a995;
+    background: #dcf2e8;
+}
+
+section:nth-of-type(4n + 2) {
+    border-color: #e36b52;
+    background: #ffe1d5;
+}
+
+section:nth-of-type(4n + 3) {
+    border-color: #5488cc;
+    background: #dceaff;
+}
+
+section:nth-of-type(4n) {
+    border-color: #e9ae34;
+    background: #fff3c7;
+}
+
+section img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+section h2 {
+    padding: 6px 10px;
+    color: #285f55;
+    border: 2px solid #47a995;
+}
+
+section:nth-of-type(4n + 2) h2 {
+    color: #9b4c32;
+    border-color: #e36b52;
+}
+
+section:nth-of-type(4n + 3) h2 {
+    color: #315c99;
+    border-color: #5488cc;
+}
+
+section:nth-of-type(4n) h2 {
+    color: #86601b;
+    border-color: #e9ae34;
+}
+
+section h3 {
+    padding: 6px 10px;
+    color: #623b78;
+    border: 2px solid #b58ac6;
+}
+
+footer {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+footer ul {
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+        background-attachment: scroll;
+    }
+
+    article {
+        grid-template-columns: 1fr;
+    }
+
+    article > h1,
+    article > nav {
+        grid-column: 1;
+    }
+
+    header,
+    footer {
+        padding: 18px;
+    }
 }
