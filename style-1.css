@@ -6,15 +6,20 @@
 body {
     margin: 0;
     padding: 24px;
-    color: #263747;
-    font-family: Arial, sans-serif;
+    color: #4b5964;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
     line-height: 1.6;
-    background: #dceaf0 url("./assets/bg.png") center / cover fixed;
+    background-color: #f3f7f8;
+    background-image: url("./assets/bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 50vh;
+    background-attachment: fixed;
 }
 
 header,
 footer {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto 20px;
     padding: 22px;
     color: #f7fbfd;
@@ -22,31 +27,58 @@ footer {
     background: #23465b;
 }
 
-header a,
+header {
+    display: flex;
+    min-height: 30vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(24, 49, 65, 0.58);
+    border-radius: 12px;
+    text-align: center;
+}
+
 footer a {
     color: #d8f0f5;
     font-weight: bold;
 }
 
+header a {
+    color: #fff;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: bold;
+    line-height: 1.1;
+}
+
 header p {
+    width: 100%;
     margin: 6px 0 0;
-    font-size: 1.25rem;
+    padding-bottom: 16px;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: bold;
+    line-height: 1.2;
 }
 
 main {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 article {
-    padding: 32px;
+    padding: 48px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
     background: #f8fbfc;
 }
 
 article > h1 {
-    margin-top: 0;
-    color: #176b87;
-    text-align: center;
+    margin: 0 0 24px;
+    padding-bottom: 16px;
+    color: #303b45;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.15;
+    text-align: left;
 }
 
 nav {
@@ -56,31 +88,28 @@ nav {
 }
 
 nav h2 {
-    margin: 0 0 8px;
-    color: #315f78;
+    margin: 0 0 12px;
+    color: #40596d;
+    font-size: 1.25rem;
 }
 
-nav ul,
-footer ul {
+nav ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 24px;
+    flex-direction: column;
+    gap: 8px;
     margin: 0;
-    padding: 0;
-    list-style: none;
+    padding-left: 22px;
 }
 
 nav a {
-    color: #255a73;
+    color: inherit;
 }
 
 section {
     display: flex;
-    align-items: center;
-    gap: 28px;
+    align-items: stretch;
+    gap: 0;
     padding: 24px 0;
-    border-bottom: 1px solid #c9dce3;
 }
 
 section:nth-of-type(even) {
@@ -92,34 +121,64 @@ section > div {
     min-width: 0;
 }
 
+section > div:first-child {
+    padding: 12px;
+    background: #e7f2f5;
+}
+
 section img {
     display: block;
     width: 100%;
-    max-height: 340px;
+    height: 100%;
+    min-height: 280px;
     object-fit: cover;
 }
 
+section > div:last-child {
+    padding: 16px 28px;
+}
+
 section h2 {
-    color: #176b87;
+    color: #303b45;
 }
 
 section h3 {
-    color: #597b36;
+    color: #40596d;
+}
+
+section p {
+    text-align: justify;
 }
 
 footer {
     margin-top: 20px;
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: transparent;
+    color: #40596d;
 }
 
 footer ul {
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer a {
+    color: inherit;
 }
 
 @media (max-width: 600px) {
     body {
         padding: 12px;
-        background-attachment: scroll;
+        background-size: auto 50vh;
     }
 
     header,
@@ -128,10 +187,37 @@ footer ul {
         padding: 20px;
     }
 
+    header {
+        min-height: 30vh;
+    }
+
+    footer,
+    footer ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer ul {
+        gap: 6px;
+    }
+
     section,
     section:nth-of-type(even) {
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
+    }
+
+    section > div:first-child {
+        min-height: 240px;
+    }
+
+    section img {
+        min-height: 240px;
+        max-height: 300px;
+    }
+
+    section > div:last-child {
+        padding: 8px 0;
     }
 }
