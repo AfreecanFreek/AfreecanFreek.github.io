@@ -5,21 +5,17 @@
 
 body {
     margin: 0;
-    padding: 24px;
+    padding: 0 clamp(12px, 2vw, 32px);
     color: #222;
     font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f6f6f6;
-    background-image: url("./assets/bg.png");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100% 50vh;
+    background-color: #fff;
 }
 
 header,
 footer {
-    max-width: 1100px;
-    margin: 0 auto 20px;
+    max-width: 1600px;
+    margin: 0 auto;
     padding: 20px;
     color: #333;
     text-align: center;
@@ -32,27 +28,56 @@ footer a {
 }
 
 header {
-    min-height: 35vh;
-    background: rgba(24, 35, 48, 0.72);
-}
-
-header a,
-header p {
-    color: #fff;
+    display: grid;
+    min-height: 40vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: stretch;
+    justify-items: stretch;
+    padding: 0;
+    background-color: #182330;
+    background-image:
+        linear-gradient(rgba(14, 25, 37, 0.48), rgba(14, 25, 37, 0.48)),
+        url("./assets/antennas.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 50% 100%, 50% 100%;
 }
 
 header a {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 16px;
+    background: #22394b;
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
     font-weight: bold;
+    text-align: center;
 }
 
 header p {
-    margin: 6px 0 0;
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 16px;
+    border-top: 6px solid #087e8b;
+    background:
+        linear-gradient(rgba(24, 35, 48, 0.58), rgba(24, 35, 48, 0.58)),
+        url("./assets/telcom2.jpg") center / cover;
+    color: #fff;
+    font-size: clamp(1.1rem, 2.5vw, 2rem);
+    text-align: center;
 }
 
 main {
-    max-width: 1100px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -69,15 +94,18 @@ article > nav {
 
 article > h1 {
     margin: 0;
-    padding: 14px;
+    padding: clamp(22px, 4vw, 48px) 24px;
     color: #222;
-    text-align: center;
-    border-left: 6px solid #e36b52;
+    text-align: left;
+    border-left: 8px solid #d95d39;
+    font-size: clamp(2.75rem, 7vw, 5rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
     background: #fff;
 }
 
 nav {
-    padding: 14px 20px;
+    padding: 22px 24px;
     border-left: 6px solid #e9ae34;
     background: #fff;
 }
@@ -92,6 +120,7 @@ nav h2 {
 nav ul {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(88px, auto);
     gap: 0;
     margin: 0;
     padding: 0;
@@ -99,7 +128,6 @@ nav ul {
 }
 
 nav li {
-    border-left: 4px solid #47a995;
     background: #dcf2e8;
 }
 
@@ -119,9 +147,22 @@ nav li:nth-child(4) {
 }
 
 nav a {
-    display: block;
-    height: 100%;
-    padding: 12px;
+    display: flex;
+    min-height: 88px;
+    align-items: center;
+    padding: 14px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav li:hover {
+    filter: brightness(0.95);
+}
+
+nav a:focus-visible {
+    outline: 3px solid #22394b;
+    outline-offset: -3px;
 }
 
 footer ul {
@@ -134,18 +175,23 @@ footer ul {
     list-style: none;
 }
 
-nav a {
-    color: #333;
-}
-
 section {
     display: grid;
     grid-template-columns: 1fr;
     align-content: start;
-    padding: 16px;
-    border: 0;
-    border-left: 6px solid #47a995;
+    padding: clamp(16px, 2vw, 28px);
+    border-left: 8px solid #47a995;
     background: #fff;
+}
+
+section:nth-of-type(4n + 2),
+section:nth-of-type(4n + 3) {
+    background: #fff;
+}
+
+section:nth-of-type(4n + 1),
+section:nth-of-type(4n) {
+    background: #e7f2f5;
 }
 
 section:nth-of-type(4n + 2) {
@@ -164,11 +210,19 @@ section img {
     display: block;
     width: 100%;
     height: 280px;
+    filter: brightness(0.72);
     object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(25, 48, 62, 0.18);
+}
+
+section img:hover {
+    filter: none;
 }
 
 section h2 {
-    padding: 6px 10px;
+    margin: 18px 0 12px;
+    padding: 8px 12px;
     color: #111;
     border-left: 4px solid #47a995;
 }
@@ -189,29 +243,30 @@ section:nth-of-type(4n) h2 {
 }
 
 section h3 {
-    padding: 6px 10px;
-    color: #285f55;
-    border-left: 4px solid #47a995;
+    margin: 0 0 12px;
+    padding: 0 12px;
+    color: #333;
 }
 
 section:nth-of-type(4n + 2) h3 {
-    color: #9b4c32;
-    border-left-color: #e36b52;
+    color: #333;
 }
 
 section:nth-of-type(4n + 3) h3 {
-    color: #315c99;
-    border-left-color: #5488cc;
+    color: #333;
 }
 
 section:nth-of-type(4n) h3 {
-    color: #86601b;
-    border-left-color: #e9ae34;
+    color: #333;
+}
+
+section p {
+    margin: 0;
+    line-height: 1.75;
 }
 
 footer {
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 
 footer ul {
@@ -220,8 +275,7 @@ footer ul {
 
 @media (max-width: 600px) {
     body {
-        padding: 12px;
-        background-size: auto 50vh;
+        padding: 0 12px;
     }
 
     article {
@@ -234,7 +288,7 @@ footer ul {
     }
 
     nav ul {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     section img {
@@ -247,6 +301,28 @@ footer ul {
     }
 
     header {
-        min-height: 35vh;
+        min-height: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 170px auto auto;
+        padding: 0;
+        background-size: 100% 170px, 100% 170px;
+        background-position: center top;
+    }
+
+    header a {
+        grid-column: 1;
+        grid-row: 2;
+        background: #22394b;
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    header p {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 10px;
+        border-top-width: 4px;
+        background:
+            linear-gradient(rgba(24, 35, 48, 0.58), rgba(24, 35, 48, 0.58)),
+            url("./assets/telcom2.jpg") center / cover;
     }
 }
