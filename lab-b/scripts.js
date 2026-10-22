@@ -1,3 +1,4 @@
+/* MICROSOFT COPILOT BEGIN */
 const todo = {
   storageKey: "todo-tasks",
   tasks: [],
@@ -268,3 +269,4 @@ const todo = {
 };
 
 todo.init();
+/* MICROSOFT COPILOT END */
