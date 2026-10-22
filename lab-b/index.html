@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lista zadań</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <script src="scripts.js" defer></script>
+    </head>
+    <body>
+        <main id="todo-ctn">
+            <h1>Lista zadań</h1>
+
+            <label for="todo-search-input">Szukaj zadań</label>
+            <input type="search" id="todo-search-input" placeholder="Wpisz co najmniej 2 znaki">
+
+            <ul id="todo-list" aria-live="polite"></ul>
+
+            <form id="todo-form">
+                <h2>Dodaj zadanie</h2>
+                <label for="todo-title-input">Treść zadania</label>
+                <input type="text" id="todo-title-input" minlength="3" maxlength="255" required>
+                <label for="todo-due-input">Termin wykonania (opcjonalnie)</label>
+                <input type="datetime-local" id="todo-due-input">
+                <button id="todo-add-btn" type="submit">Dodaj zadanie</button>
+            </form>
+
+            <p id="todo-message" role="status" aria-live="polite"></p>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  background-color: #f3fff3;
+  color: #183322;
+  font-family: system-ui, sans-serif;
+}
+
+#todo-ctn {
+  width: min(100%, 42rem);
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #c8ddce;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem #18332212;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+label {
+  margin: 1rem 0 0.35rem;
+  font-weight: 600;
+}
+
+input {
+  padding: 0.7rem;
+  border: 1px solid #9eb5a4;
+  border-radius: 0.35rem;
+  font: inherit;
+}
+
+input:focus,
+button:focus-visible {
+  outline: 3px solid #7bb88e;
+  outline-offset: 2px;
+}
+
+#todo-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #d6e5d9;
+  border-radius: 0.4rem;
+  cursor: text;
+}
+
+.task-title {
+  flex: 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: text;
+}
+
+.task-due-date {
+  color: #52675a;
+  font-size: 0.875rem;
+}
+
+.delete-task,
+#todo-add-btn {
+  padding: 0.55rem 0.8rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: #27683d;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.delete-task {
+  background: #a52d36;
+}
+
+#todo-form {
+  padding-top: 1rem;
+  border-top: 1px solid #d6e5d9;
+}
+
+#todo-form h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+#todo-add-btn {
+  margin-top: 1rem;
+}
+
+.task-edit-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-edit-form {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.task-edit-due-input {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.save-task {
+  padding: 0.55rem 0.8rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: #27683d;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.empty-state {
+  padding: 0.8rem;
+  color: #52675a;
+  text-align: center;
+}
+
+#todo-message {
+  min-height: 1.5em;
+  margin-bottom: 0;
+  color: #a52d36;
+}
+
+@media (max-width: 32rem) {
+  #todo-ctn {
+    padding: 1.25rem;
+  }
+
+  .todo-item {
+    flex-wrap: wrap;
+  }
+
+  .task-due-date {
+    order: 1;
+    width: 100%;
+  }
+}
