@@ -1,6 +1,7 @@
 // podmienic
 const API_KEY = "96c92166aeb306ed041cd54c029e2647";
 
+/* MICROSOFT COPILOT BEGIN */
 const form = document.querySelector("#weather-form");
 const locationInput = document.querySelector("#location");
 const statusMessage = document.querySelector("#status");
@@ -231,3 +232,5 @@ function createWeatherIcon(iconCode, description) {
 function capitalize(text) {
   return text.charAt(0).toLocaleUpperCase("pl-PL") + text.slice(1);
 }
+
+/* MICROSOFT COPILOT END */
