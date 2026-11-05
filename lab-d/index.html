@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f6fa">
+    <title>Pogoda — prognoza dla Twojego miasta</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="Pogoda — strona główna">
+                <span class="brand-mark" aria-hidden="true">☼</span>
+                <span>pogoda</span>
+            </a>
+            <span class="topbar-note">Prognoza w jednym miejscu</span>
+        </header>
+
+        <section class="search-panel" aria-labelledby="page-title">
+            <p class="eyebrow">SPRAWDŹ WARUNKI</p>
+            <h1 id="page-title">Pogoda na dziś i najbliższe dni</h1>
+            <p class="intro">Wpisz nazwę miejscowości, aby zobaczyć aktualne warunki i prognozę.</p>
+            <form id="weather-form" class="search-form">
+                <label class="sr-only" for="location">Miasto lub adres</label>
+                <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    placeholder="Np. Szczecin"
+                    autocomplete="off"
+                >
+                <button type="submit">
+                    <span>Pogoda</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+            </form>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <div id="weather-results" class="results" aria-live="polite">
+            <section id="current-section" class="weather-section" aria-labelledby="current-heading" hidden>
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">TERAZ</p>
+                        <h2 id="current-heading">Aktualna pogoda</h2>
+                    </div>
+                </div>
+                <div id="current-weather"></div>
+            </section>
+
+            <section id="forecast-section" class="weather-section" aria-labelledby="forecast-heading" hidden>
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">KOLEJNE DNI</p>
+                        <h2 id="forecast-heading">Prognoza na 5 dni</h2>
+                    </div>
+                    <span class="section-caption">Aktualizowana co 3 godziny</span>
+                </div>
+                <div id="forecast" class="forecast-grid"></div>
+            </section>
+        </div>
+
+        <footer class="footer">Dane pogodowe: OpenWeather</footer>
+    </main>
+</body>
+</html>
